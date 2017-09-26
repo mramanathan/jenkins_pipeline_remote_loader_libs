@@ -46,7 +46,7 @@ def lint_deploy(String ymlfile, saythis) {
                 saythis.echome("from deploy stage")
                 try {
                     // ymldeploy = load "bin/cfgDeploy.groovy"
-                    fileLoader.withGit('https://github.com/mramanathan/jenkins_pipeline_remote_loader_libs.git', 'master', null, '') {
+                    fileLoader.withGit('https://github.com/mramanathan/jenkins_pipeline_remote_loader_libs.git', 'master', null, 'linux') {
                         ymldeploy = fileLoader.load('bin/cfgDeploy.groovy')
                     }
                     cfgdeploy_status = ymldeploy.cfgDeploy("${ymlfile}")
